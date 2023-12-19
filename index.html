@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer.js Demo</title>
+</head>
+<body>
+    <div id="timer"></div>
+    <button id="start-btn" onclick="startTimer()">Start</button>
+    <button id="pause-btn" onclick="pauseTimer()" style="display: none">Pause</button>
+    <script src="index.js"></script>
+    <script>
+        const TIME = {
+            min: 0,
+            sec: 10
+        };
+        const target = document.querySelector("#timer");
+        target.textContent = `${TIME.min}:${TIME.sec}`;
+
+        const startBtn = document.querySelector("#start-btn");
+        const pauseBtn = document.querySelector("#pause-btn");
+
+        const timer = new Timer({
+            time: TIME,
+            onTick: (time) => {
+                target.textContent = `${time.min}:${time.sec}`;
+            },
+            onEnd: () => {
+                target.textContent = `${TIME.min}:${TIME.sec}`;
+                pauseBtn.style.display = "none";
+                startBtn.style.display = "block";
+            }
+        });
+
+        function startTimer() {
+            timer.start();
+            startBtn.style.display = "none";
+            pauseBtn.style.display = "block";   
+        }
+
+        function pauseTimer() {
+            timer.pause();
+            pauseBtn.style.display = "none";
+            startBtn.style.display = "block";
+        }
+    </script>
+</body>
+</html>
