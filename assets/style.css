@@ -1,0 +1,37 @@
+* {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.header .container {
+  display: flex;
+  flex-direction: column;
+}
+
+/** {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.heading {
+  font-family: "Cardo";
+}
+#timer {
+  font-size: 40px;
+}
+.control-btn {
+  width: 100px;
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.control-btn:hover {
+  background-color: #000;
+  color: #fff;
+}*/

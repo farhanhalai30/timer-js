@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Timer.js Demo</title>
+    <title>Timer.js | Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
+
 <body>
-    <div id="timer"></div>
-    <button id="start-btn" onclick="startTimer()">Start</button>
-    <button id="pause-btn" onclick="pauseTimer()" style="display: none">Pause</button>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="logo">Timer.js</div>
+                <ul class="nav">
+                    <li>Demo</li>
+                    <li>Installation</li>
+                </ul>
+            </div>
+        </header>
+    </div>
+    <!--<div class="wrapper">
+        <h1 class="heading">Timer.js</h1>
+        <h1 id="timer"></h1>
+        <button id="start-btn" class="control-btn" onclick="startTimer()">Start</button>
+        <button id="pause-btn" class="control-btn" onclick="pauseTimer()" style="display: none">Pause</button>
+    </div>-->
+
     <script src="index.js"></script>
+
     <script>
         const TIME = {
             min: 0,
-            sec: 10
+            sec: 30
         };
         const target = document.querySelector("#timer");
-        target.textContent = `${TIME.min}:${TIME.sec}`;
+        const displayTitle = (title) => {
+            document.title = `Timer.js | ${title}`
+        };
+        const getFormattedTime = (time) => {
+            let formattedTime = `${time.min < 9 ? "0" + time.min : time.min}:${time.sec < 9 ? "0" + time.sec : time.sec}`;
+            return formattedTime;
+        };
+
+        target.textContent = getFormattedTime(TIME);
 
         const startBtn = document.querySelector("#start-btn");
         const pauseBtn = document.querySelector("#pause-btn");
@@ -25,10 +56,14 @@
         const timer = new Timer({
             time: TIME,
             onTick: (time) => {
-                target.textContent = `${time.min}:${time.sec}`;
+                let formattedTime = getFormattedTime(time);
+                target.textContent = formattedTime;
+                displayTitle(formattedTime);
             },
             onEnd: () => {
-                target.textContent = `${TIME.min}:${TIME.sec}`;
+                let formattedTime = getFormattedTime(TIME);
+                target.textContent = formattedTime;
+                displayTitle(formattedTime);
                 pauseBtn.style.display = "none";
                 startBtn.style.display = "block";
             }
@@ -37,7 +72,7 @@
         function startTimer() {
             timer.start();
             startBtn.style.display = "none";
-            pauseBtn.style.display = "block";   
+            pauseBtn.style.display = "block";
         }
 
         function pauseTimer() {
@@ -47,4 +82,5 @@
         }
     </script>
 </body>
+
 </html>
