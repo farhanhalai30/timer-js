@@ -1,6 +1,6 @@
 # Timer.js
 
-Timer plugin written in JavaScript
+Timer plugin written in **JavaScript**.
 
 ## Technologies
 
@@ -18,7 +18,7 @@ const timer = new Timer({
         // Add code to perform on every second down.
     },
     onEnd: () => {
-        // Add code to perform on timer end.
+        // Add code to perform on the end of the timer.
     }
 });
 ```
