@@ -1,37 +1,116 @@
 * {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  transition: ease-in-out all 0.3s;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: initial;
+}
+button {
+  cursor: pointer;
+}
+ul,
+ol {
+  list-style: none;
 }
 
-.header .container {
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+.flex {
   display: flex;
-  flex-direction: column;
+}
+.center {
+  justify-content: space-between;
+  align-items: center;
 }
 
-/** {
-  font-family: Inter, Arial, Helvetica, sans-serif;
+.header {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
-.wrapper {
-  display: flex;
+.logo .flex {
+  align-items: center;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+.logo img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.header-btn {
+  font-size: 12px;
+  padding: 8px 12px;
+  margin-left: 6px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.header-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.timer-box {
+  margin: 20px 0 0;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.heading {
-  font-family: "Cardo";
-}
-#timer {
-  font-size: 40px;
+.timer {
+  font-size: 120px;
+  margin: 50px 0 60px;
 }
 .control-btn {
-  width: 100px;
-  border: 1px solid #000;
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 8px;
-  font-size: 14px;
+  width: 200px;
+  border: 2px solid #000;
+  background-color: #000;
+  color: #fff;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 600;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .control-btn:hover {
   background-color: #000;
   color: #fff;
-}*/
+}
+.timer-list li {
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.timer-list li.active {
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: calc(100% - 40px);
+    margin: auto 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timer {
+    font-size: 100px;
+    margin: 40px 0;
+  }
+  .control-btn {
+    width: 150px;
+    padding: 14px;
+    font-size: 17px;
+  }
+}
