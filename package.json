@@ -1,0 +1,23 @@
+{
+  "name": "timer.js",
+  "version": "1.0.0",
+  "description": "Timer plugin written in **JavaScript**.",
+  "main": "index.js",
+  "scripts": {
+    "build": "uglifyjs index.js -c -m -o assets/timer.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farhanhalai30/timer.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farhanhalai30/timer.js/issues"
+  },
+  "homepage": "https://github.com/farhanhalai30/timer.js#readme",
+  "devDependencies": {
+    "uglify-js": "^3.17.4"
+  }
+}
