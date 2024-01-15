@@ -50,7 +50,7 @@
             document.title = `Timer.js | ${title}`
         };
         const getFormattedTime = (time) => {
-            let formattedTime = `${time.min < 9 ? "0" + time.min : time.min}:${time.sec < 9 ? "0" + time.sec : time.sec}`;
+            let formattedTime = `${time.min < 10 ? "0" + time.min : time.min}:${time.sec < 10 ? "0" + time.sec : time.sec}`;
             return formattedTime;
         };
 
